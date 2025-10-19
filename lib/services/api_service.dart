@@ -11,6 +11,10 @@ class ApiService {
             baseUrl: "https://pokedex.alansantos.dev/api/",
             connectTimeout: const Duration(seconds: 10),
             receiveTimeout: const Duration(seconds: 10),
+            contentType: "application/json",
+            headers: {
+              "app_name": "PokeDex",
+            },
           ),
         ) {
     !kReleaseMode ? _dio.interceptors.add(HttpFormatter()) : null;
